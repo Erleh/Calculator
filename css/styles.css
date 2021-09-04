@@ -1,0 +1,169 @@
+:root{
+    --ff-main: 'Ubuntu', sans-serif; 
+
+    --fc-main-500: 0 100% 0;
+    --fc-main-200: 0 0% 80%;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+p{
+    margin: 0;
+}
+
+body{
+    background-color:rgb(44, 44, 44);
+    margin: 0;
+}
+
+header{
+    font-family: var(--ff-main);
+    font-weight: 400;
+    font-size: 1.6rem;
+    text-align: center;
+    border: 1px solid hsl(var(--fc-main-500));
+    background-color: hsl(184, 23%, 61%);
+    padding: .2rem;
+    margin-bottom: 4rem;
+}
+
+main{
+    font-family: var(--ff-main);
+    text-align: center;
+}
+
+li{
+    display:flex;
+}
+
+.container{
+    margin: 0 auto;
+    display: flex;
+}
+
+.main{
+    flex-direction: column;
+}
+
+.footer{
+    text-align: center;
+    margin: 4rem;
+}
+
+.calculator{
+    border: 2px outset white;
+    margin: 0 auto;
+}
+
+.display{
+    min-height: 7rem;
+    min-width: 50%;
+    margin: 2rem auto;
+    flex-direction: column;
+    background:radial-gradient(circle at center, hsl(180, 5%, 60%), hsl(184, 11%, 71%));
+}
+
+.display > p{
+    margin: .5rem;
+    font-size: 2rem;
+}
+
+.display > .history{
+    color: hsl(var(--fc-main-200));
+}
+
+.inputs{
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs ul{
+    margin: .5rem;
+    padding: 0;
+}
+
+.inputs li{
+    text-align: left;
+    list-style: none;
+}
+
+.inputs input[type="button"]{
+    font-family: var(--ff-main);
+    font-weight: 500;
+    font-size: 1.5rem;
+    width: 4rem;
+    height: 3rem;
+}
+
+.numbers{
+    flex-direction: column-reverse;
+}
+
+.numbers > li{
+    margin: .2rem;
+}
+
+.numbers input{
+    background-color: rgb(44, 44, 44);
+    color: rgb(196, 196, 196);
+    border-color: white;
+}
+
+.functions{
+    flex-direction: column;
+}
+
+.functions > li{
+    flex-direction: row;
+    margin: .2rem;
+}
+
+.functions input{
+    background-color: rgba(152, 214, 206, 0.692);
+}
+
+.functions #equals{
+    background-color: hsl(41, 56%, 53%);
+}
+
+input:active{
+    display:inline-block;
+    transform: scale(1.1);
+    background-color: rgb(173, 173, 173);
+    color: black;
+    transition-property: background-color transform color;
+    transition-duration: .1s;
+}
+
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.fadein{
+    animation: .5s linear fadein;
+}
+
+@media (max-width: 390px){
+    .inputs{
+        flex-direction: column-reverse;
+    }
+
+    .functions{
+        margin: 0 auto;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    .functions > li{
+        flex-direction: column;
+    }
+}
